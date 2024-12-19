@@ -11,17 +11,12 @@ from firebase_admin import credentials, db
 app = Flask(__name__)
 
 # Kết nối Firebase
-# def initialize_firebase():
-#     cred = credentials.Certificate("todolistapp-408f2-firebase-adminsdk-jaq6y-41a1ffc3b0.json")
-#     firebase_admin.initialize_app(cred, {
-#         'databaseURL': 'https://todolistapp-408f2-default-rtdb.asia-southeast1.firebasedatabase.app/'
-#     })
 def initialize_firebase():
     # Kiểm tra xem Firebase đã được khởi tạo chưa
     if not firebase_admin._apps:
-        cred = credentials.Certificate("todolistapp-408f2-firebase-adminsdk-jaq6y-41a1ffc3b0.json")
+        cred = credentials.Certificate("firebase-adminsdk.json")
         firebase_admin.initialize_app(cred, {
-            'databaseURL': 'https://todolistapp-408f2-default-rtdb.asia-southeast1.firebasedatabase.app/'
+            'databaseURL': 'Link to realtime database from firebase'
         })
     else:
         print("Firebase app is already initialized.")
